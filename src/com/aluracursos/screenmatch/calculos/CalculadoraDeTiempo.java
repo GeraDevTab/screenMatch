@@ -1,8 +1,7 @@
 package com.aluracursos.screenmatch.calculos;
 
-import com.aluracursos.screenmatch.Pelicula;
-import com.aluracursos.screenmatch.Serie;
-import com.aluracursos.screenmatch.Titulo;
+import com.aluracursos.modelos.Pelicula;
+import com.aluracursos.modelos.Titulo;
 
 public class CalculadoraDeTiempo {
     private int tiempoTotal;

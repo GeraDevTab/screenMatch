@@ -1,5 +1,5 @@
-import com.aluracursos.screenmatch.Pelicula;
-import com.aluracursos.screenmatch.Serie;
+import com.aluracursos.modelos.Pelicula;
+import com.aluracursos.modelos.Serie;
 import com.aluracursos.screenmatch.calculos.CalculadoraDeTiempo;
 
 public class Principal {
