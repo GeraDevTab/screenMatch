@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        Pelicula miPelicula = new Pelicula();
-        miPelicula.setNombre("Encanto");
+        Pelicula miPelicula = new Pelicula("Encanto",2021);
+        //miPelicula.setNombre();
         miPelicula.setFechaDeLanzamiento(2021);
         miPelicula.setDuracionEnMinutos(120);
         miPelicula.setIncluidoEnElPlan(true);
@@ -22,8 +22,8 @@ public class Principal {
         System.out.println(miPelicula.getTotalDeLasEvaluaciones());
         System.out.println(miPelicula.calculaMedia());
 
-        Pelicula otraPelicula = new Pelicula();
-        otraPelicula.setNombre("MAtrix");
+        Pelicula otraPelicula = new Pelicula("MAtrix",2004);
+        //otraPelicula.setNombre();
         otraPelicula.setFechaDeLanzamiento(1998);
         otraPelicula.setDuracionEnMinutos(180);
         System.out.println(otraPelicula);
@@ -34,9 +34,9 @@ public class Principal {
         System.out.println("Impresion del objeto: "+miPelicula);
 
 
-        Serie casaDragon = new Serie();
-        casaDragon.setNombre("LA casa del dragon");
-        casaDragon.setFechaDeLanzamiento(2022);
+        Serie casaDragon = new Serie("LA casa del dragon",2022);
+        //casaDragon.setNombre();
+        //casaDragon.setFechaDeLanzamiento(2022);
         casaDragon.setTemporadas(1);
         casaDragon.setMinutosPorEpisodio(50);
         casaDragon.setEpidosiosPorTemporada(10);
@@ -60,8 +60,8 @@ public class Principal {
 
         filtroRecomendacion.filtra(episodio);
 
-        var peliculaDeBruno = new Pelicula();
-        peliculaDeBruno.setNombre("El señor de los anillos");
+        var peliculaDeBruno = new Pelicula("El señor de los anillos",2003);
+        //peliculaDeBruno.setNombre();
         peliculaDeBruno.setDuracionEnMinutos(180);
         peliculaDeBruno.setFechaDeLanzamiento(2001);
 
