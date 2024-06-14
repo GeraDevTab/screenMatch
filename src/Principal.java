@@ -1,6 +1,10 @@
+import com.aluracursos.modelos.Episodio;
 import com.aluracursos.modelos.Pelicula;
 import com.aluracursos.modelos.Serie;
 import com.aluracursos.screenmatch.calculos.CalculadoraDeTiempo;
+import com.aluracursos.screenmatch.calculos.FiltroRecomendacion;
+
+import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
@@ -44,6 +48,32 @@ public class Principal {
         calculadora.incluye(casaDragon);
         calculadora.incluye(otraPelicula);
         System.out.println("Tiempo necesario para ver tus titulos favoritos: "+calculadora.getTiempoTotal());
+
+        FiltroRecomendacion filtroRecomendacion = new FiltroRecomendacion();
+        filtroRecomendacion.filtra(miPelicula);
+
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setNombre("La casa Targarian");
+        episodio.setSerie(casaDragon);
+        episodio.setTotalVisualizaciones(50);
+
+        filtroRecomendacion.filtra(episodio);
+
+        var peliculaDeBruno = new Pelicula();
+        peliculaDeBruno.setNombre("El señor de los anillos");
+        peliculaDeBruno.setDuracionEnMinutos(180);
+        peliculaDeBruno.setFechaDeLanzamiento(2001);
+
+        ArrayList<Pelicula> listaDePeliculas = new ArrayList<>();
+        listaDePeliculas.add(peliculaDeBruno);
+        listaDePeliculas.add(miPelicula);
+        listaDePeliculas.add(otraPelicula);
+
+        System.out.println(listaDePeliculas.size());
+        System.out.println("La primera pelicula es "+listaDePeliculas.get(0).getNombre());
+        System.out.println(listaDePeliculas);
+        System.out.println("toString de la pelicula "+listaDePeliculas.get(0).toString());
 
 
     }

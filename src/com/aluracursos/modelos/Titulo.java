@@ -20,6 +20,10 @@ public class Titulo {
         this.fechaDeLanzamiento = fechaDeLanzamiento;
     }
 
+    public int getFechaDeLanzamiento(){
+        return fechaDeLanzamiento;
+    }
+
     public void setDuracionEnMinutos(int duracionEnMinutos) {
         this.duracionEnMinutos = duracionEnMinutos;
     }
