@@ -1,4 +1,4 @@
-package com.aluracursos.modelos;
+package com.aluracursos.screenmatch.modelos;
 
 public class Serie extends Titulo {
     private int temporadas;

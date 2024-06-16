@@ -1,6 +1,8 @@
-import com.aluracursos.modelos.Episodio;
-import com.aluracursos.modelos.Pelicula;
-import com.aluracursos.modelos.Serie;
+package com.aluracursos.screenmatch.principal;
+
+import com.aluracursos.screenmatch.modelos.Episodio;
+import com.aluracursos.screenmatch.modelos.Pelicula;
+import com.aluracursos.screenmatch.modelos.Serie;
 import com.aluracursos.screenmatch.calculos.CalculadoraDeTiempo;
 import com.aluracursos.screenmatch.calculos.FiltroRecomendacion;
 
