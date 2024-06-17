@@ -6,6 +6,11 @@ import com.aluracursos.screenmatch.modelos.Titulo;
 
 import java.util.ArrayList;
 
+import java.util.Collections;
+import java.util.Comparator;
+
+import static java.util.Collection.*;
+
 public class PrincipalConListas {
     public static void main(String[] args) {
         Pelicula miPelicula = new Pelicula("Encanto",2021);
@@ -23,14 +28,27 @@ public class PrincipalConListas {
         lista.add(casaDragon);
 
         for (Titulo item: lista){
-            System.out.println(item.getNombre());
-            if(item instanceof Pelicula){
-                Pelicula pelicula = (Pelicula) item;
-                System.out.println(pelicula.getClasificacion());
+            System.out.println("Nombre: "+item.getNombre());
+            if(item instanceof Pelicula pelicula && pelicula.getClasificacion()>3){
+                //Pelicula pelicula = (Pelicula) item;
+                System.out.println("Clasificacion: "+pelicula.getClasificacion());
 
             }
-
-
         }
+
+        ArrayList<String> listaDeArtistas = new ArrayList<>();
+        listaDeArtistas.add("Penelope Cruz");
+        listaDeArtistas.add("Antonio Banderas");
+        listaDeArtistas.add("Ricardo Darin");
+
+        Collections.sort(listaDeArtistas);
+        System.out.println("Lista de artistas Ordenada: "+listaDeArtistas);
+
+        Collections.sort(lista);
+        System.out.println("Lista de titulos ordenados: "+lista);
+
+        lista.sort(Comparator.comparing(Titulo::getFechaDeLanzamiento));
+        System.out.println("lista por fecha: "+lista);
+
     }
 }
