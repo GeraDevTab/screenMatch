@@ -1,11 +1,12 @@
 package com.aluracursos.screenmatch.modelos;
 
+import com.aluracursos.screenmatch.exception.ErrorEnConversionDeDuracionException;
 import com.google.gson.annotations.SerializedName;
 
 public class Titulo implements Comparable<Titulo>{
-    @SerializedName("Title")
+    //@SerializedName("Title") se comenta por que ya usamos la clase gson
     private String nombre;
-    @SerializedName("Year")
+    //@SerializedName("Year") se comenta por que ya usamos la clase gson
     private int fechaDeLanzamiento;
     private int duracionEnMinutos;
     private boolean incluidoEnElPlan;
@@ -20,6 +21,9 @@ public class Titulo implements Comparable<Titulo>{
     public Titulo(TituloOmdb miTituloOmdb){
         this.nombre = miTituloOmdb.title();
         this.fechaDeLanzamiento = Integer.valueOf(miTituloOmdb.year());
+        if(miTituloOmdb.runtime().contains("N/A")){
+            throw new ErrorEnConversionDeDuracionException("No pude convertir la duracion por que contiene una barra");
+        }
         this.duracionEnMinutos = Integer.valueOf(miTituloOmdb.runtime().substring(0,3).replace(" ",""));
     }
 
@@ -79,8 +83,8 @@ public class Titulo implements Comparable<Titulo>{
 
     @Override
     public String toString() {
-        return "nombre='" + nombre + '\'' +
+        return "(nombre='" + nombre + '\'' +
                 ", fechaDeLanzamiento=" + fechaDeLanzamiento+
-                ", duracion="+duracionEnMinutos;
+                ", duracion="+duracionEnMinutos+")";
     }
 }
